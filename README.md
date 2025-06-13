@@ -4,11 +4,11 @@ A demonstration project showing how to process, ingest, and analyse chatroom-sty
 
 ## Overview
 
-This project demonstrates how to:
+This project provides demo assets for:
 
-- Ingest semi-structured chat data into Elasticsearch
-- Create appropriate index mappings and ingest pipelines
-- Build analytics dashboards in Kibana
+- Ingesting semi-structured chat data into Elasticsearch
+- Creating appropriate index mappings and ingest pipelines
+- Analytics dashboards in Kibana
 
 The demo serves as a practical example for investigators, analysts, and data scientists working with chat room data.
 
