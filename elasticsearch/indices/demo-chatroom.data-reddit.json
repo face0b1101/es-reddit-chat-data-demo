@@ -1,0 +1,143 @@
+{
+  "settings": {
+    "index.codec": "default",
+    "index.default_pipeline": "reddit-chat-data-pipeline",
+    "index.query.default_field": [
+      "*"
+    ],
+    "index.refresh_interval": "5s"
+  },
+  "mappings": {
+    "properties": {
+      "@timestamp": {
+        "type": "date"
+      },
+      "avg_score": {
+        "type": "double"
+      },
+      "end_date": {
+        "type": "date",
+        "format": "epoch_second"
+      },
+      "keywords": {
+        "type": "keyword"
+      },
+      "lang_ident": {
+        "properties": {
+          "model_id": {
+            "type": "keyword"
+          },
+          "predicted_value": {
+            "type": "keyword"
+          },
+          "prediction_probability": {
+            "type": "float"
+          },
+          "prediction_score": {
+            "type": "float"
+          },
+          "top_classes": {
+            "properties": {
+              "class_name": {
+                "type": "keyword"
+              },
+              "class_probability": {
+                "type": "float"
+              },
+              "class_score": {
+                "type": "float"
+              }
+            }
+          }
+        }
+      },
+      "ner": {
+        "properties": {
+          "entities": {
+            "properties": {
+              "class_name": {
+                "type": "keyword"
+              },
+              "class_probability": {
+                "type": "float"
+              },
+              "end_pos": {
+                "type": "long"
+              },
+              "entity": {
+                "type": "keyword"
+              },
+              "start_pos": {
+                "type": "long"
+              }
+            }
+          },
+          "is_truncated": {
+            "type": "boolean"
+          },
+          "model_id": {
+            "type": "keyword"
+          },
+          "predicted_value": {
+            "type": "text"
+          }
+        }
+      },
+      "num_messages": {
+        "type": "long"
+      },
+      "start_date": {
+        "type": "date",
+        "format": "epoch_second"
+      },
+      "subreddit": {
+        "type": "keyword"
+      },
+      "subreddit_id": {
+        "type": "keyword"
+      },
+      "tags": {
+        "properties": {
+          "LOC": {
+            "type": "keyword"
+          },
+          "MISC": {
+            "type": "keyword"
+          },
+          "ORG": {
+            "type": "keyword"
+          },
+          "PER": {
+            "type": "keyword"
+          }
+        }
+      },
+      "text": {
+        "type": "text",
+        "copy_to": [
+          "text_semantic"
+        ]
+      },
+      "text_semantic": {
+        "type": "semantic_text",
+        "inference_id": ".elser-2-elasticsearch",
+        "model_settings": {
+          "service": "elasticsearch",
+          "task_type": "sparse_embedding"
+        }
+      },
+      "thread_id": {
+        "type": "keyword"
+      },
+      "total_score": {
+        "type": "long"
+      },
+      "user_count": {
+        "type": "long"
+      },
+      "username": {
+        "type": "keyword"
+      }
+    }
+  }
+}
