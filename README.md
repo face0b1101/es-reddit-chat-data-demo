@@ -107,7 +107,7 @@ Once the data is ingested into your Elastic cluster it'll be ready to play with.
 
 Importing the dashboard (using Kibana Saved Objects API) will provide visualisations to explore the keywords, entities and other data gleaned from the dataset during the ingest process.
 
-Semantic Search is available out of the box (if you started an ELSER inference endpoint). Try some semantic queries like, 'text_semantic: movie discussions'.
+Semantic Search is available out of the box (if you started an ELSER inference endpoint). Try some semantic queries like, `text_semantic: movie discussions`.
 
 ## License
 
